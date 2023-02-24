@@ -1,0 +1,56 @@
+﻿<Window x:Class="Projekat.View.Registracija"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ 
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"     
+        
+        
+        Title="Registacija" Height="750" Width="430"
+ 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+      >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="134*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Border CornerRadius="10" Grid.ColumnSpan="2" Margin="-10,10,10,-10">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FFEBF67B" Offset="0.0"/>
+                    <GradientStop Color="#FF83F0AB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <xctk:WatermarkTextBox x:Name="korImeText" FontSize="22" Watermark="Korisnicko ime" Margin="32,75,72,590" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="108,7,0,0" Text="Klinika NV" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="36" FontFamily="Arial" Grid.ColumnSpan="2"/>
+        <Button  Content="Registruj korisnika" HorizontalAlignment="Left" Margin="26,580,0,0" VerticalAlignment="Top" Width="322" Height="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="RegistracijaNastavak" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="LozinkaText" FontSize="22"  Margin="22,291,82,374" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" Grid.ColumnSpan="2"  />
+        <xctk:WatermarkTextBox x:Name="PrezimeText" FontSize="22" Watermark="Prezime" Margin="19,214,85,451" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" Grid.ColumnSpan="2" />
+        <xctk:WatermarkTextBox x:Name="ImeText" FontSize="22" Watermark="Ime" Margin="22,153,82,512" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" Grid.ColumnSpan="2" />
+        <ComboBox x:Name="combo" Height="50" Width="350" Grid.ColumnSpan="2" Margin="22,375,52,296" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Lekar"></ComboBoxItem>
+            <ComboBoxItem Content="Apotekar"></ComboBoxItem>
+        </ComboBox>
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

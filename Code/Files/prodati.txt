@@ -1,0 +1,3 @@
+﻿1,brufen,bayer,100,False,false,lekar
+2,andol,bayer,123,False,false,pera
+3,lekcina,doca,10000,False,false,lekar

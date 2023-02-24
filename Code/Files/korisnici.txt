@@ -1,0 +1,6 @@
+﻿admin,admin,admin,admin,Admin
+asd,asd,asd,asd,Apotekar
+asds,asd,asd,asd,Apotekar
+reg,reg,fee,fea,Lekar
+lekar,lekar,lekar,lekar,Lekar
+pera,pera,prea,pera,Lekar

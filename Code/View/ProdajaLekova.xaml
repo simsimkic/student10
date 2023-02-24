@@ -1,0 +1,55 @@
+﻿<Window x:Class="Projekat.View.ProdajaLekova"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekat.View"
+        mc:Ignorable="d"
+        
+     
+     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Prodaja leka" Height="750" Width="800"
+ 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+      >
+
+    <Grid>
+
+
+
+
+        <Border CornerRadius="10" Margin="-51,10,-96.333,0">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FFEBF67B" Offset="0.0"/>
+                    <GradientStop Color="#FF83F0AB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <DataGrid Visibility="Visible" ItemsSource = "{Binding Source}"  x:Name="KopraGrid" HorizontalAlignment="Left" Height="294" Margin="25,285,0,0" VerticalAlignment="Top" Width="524"/>
+
+        <TextBlock Text="Prodaja Lekova" FontSize=" 35" Height="52" VerticalAlignment="Bottom" Margin="25,0,142,654"/>
+
+        <Button  Content="Prodaj Lek" HorizontalAlignment="Left" Margin="25,584,0,0" VerticalAlignment="Top" Width="322" Height="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="ProdajLek"/>
+        <xctk:WatermarkTextBox x:Name="Lek" FontSize="22" Watermark="Dodaj Lek" Margin="19,93,470,572" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" RenderTransformOrigin="0.619,-1.968" />
+        <xctk:WatermarkTextBox x:Name="KolicinaLeka" FontSize="22" Watermark="Kolicina" Margin="348,95,141.667,571" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" RenderTransformOrigin="0.619,-1.968" TextChanged="KolicinaLeka_TextChanged" />
+        <Button  Content="Dodaj" HorizontalAlignment="Left" Margin="690,94,0,0" VerticalAlignment="Top" Width="95" Height="57" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="DodajLek" RenderTransformOrigin="0.127,0.577"/>
+        <xctk:WatermarkTextBox x:Name="Recept" FontSize="22" Watermark="Dodaj Recept" Margin="19,189,470,476" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" RenderTransformOrigin="0.619,-1.968" />
+        <Button  Content="Dodaj" HorizontalAlignment="Left" Margin="333,189,0,0" VerticalAlignment="Top" Width="95" Height="56" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="DodajRecept" RenderTransformOrigin="0.127,0.577"/>
+        <TextBox x:Name="id2" Height="40" Width ="40" Margin="19,365,96,316"/>
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
+
+

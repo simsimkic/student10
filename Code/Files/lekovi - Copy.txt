@@ -1,0 +1,7 @@
+﻿33,ads,ads,123,True,False
+3232,asdas,asd,132,True,False
+23,ads,asdasd,213,True,False
+3213,as,dsa,231,True,False,
+12312,asda,sda,3213,False,False
+321,adasd,dsa,4214,False,False
+27,novi lekic,pro,123123,True,False

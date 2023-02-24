@@ -1,0 +1,124 @@
+﻿<Window x:Class="Projekat.View.Pocenta"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"    
+        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1100">
+    <Grid Background="Wheat">
+        <Border CornerRadius="10" Margin="-9,-32,10.333,31.667" RenderTransformOrigin="0.856,0.462">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FFEBF67B" Offset="0.0"/>
+                    <GradientStop Color="#FF83F0AB" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
+
+        <DataGrid Visibility="Hidden" ItemsSource = "{Binding Source =listaLekova}"  x:Name="LekoviGrid" HorizontalAlignment="Left" Height="464" Margin="464,200,0,0" VerticalAlignment="Top" Width="570">
+
+        </DataGrid>
+
+        <xctk:WatermarkTextBox x:Name="traziLek" FontSize="22" Watermark="Pretraga" Margin="167,395,749,268" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+
+
+        <DataGrid Visibility="Hidden" ItemsSource = "{Binding Source =korisnikBezLozinke}"  x:Name="KorisniciGrid" HorizontalAlignment="Left" Height="464" Margin="464,200,0,0" VerticalAlignment="Top" Width="570">
+
+        </DataGrid>
+
+        <DataGrid Visibility="Hidden" ItemsSource = "{Binding Source =listaRecepta}"  x:Name="ReceptiGrid" HorizontalAlignment="Left" Height="464" Margin="464,200,0,0" VerticalAlignment="Top" Width="570">
+
+        </DataGrid>
+
+        <DataGrid Visibility="Hidden" ItemsSource = "{Binding Source =listaLekova}"  x:Name="LekoviGridPretraga" HorizontalAlignment="Left" Height="464" Margin="464,200,0,0" VerticalAlignment="Top" Width="570">
+
+        </DataGrid>
+
+        <Label Height="50" Content="PrikazSvihRepetpa"  FontSize="22" Margin="15,67,891.333,603.667"/>
+        <Label Width="200" Height="50" Content="Prikaz svih lekova" FontSize="22" Margin="10,122,883.333,548.667"></Label>
+        <Label Height="50" Content="Ukupna prodaja svih lekova" FontSize="22" Margin="289,91,511.333,579.667"/>
+        <xctk:IconButton Height="55" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="PrikaziUkupnuProdaju" RenderTransformOrigin="0.58,0.015" Margin="0,86,461.333,579.667">
+            <iconPacks:PackIconMaterial Kind="FileFind"    Height="50" Width="50" ></iconPacks:PackIconMaterial>
+        </xctk:IconButton>
+        <Label Content="Ukupna prodaja svih lekova od " FontSize="22" Margin="668,100,116.333,548.667"/>
+        <xctk:WatermarkTextBox x:Name="izabranProizvodjac" FontSize="22" Watermark="Proizvodjac" Margin="668,150,246.333,514.667" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+        <xctk:IconButton Height="55" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="PrikaziUkupnuProdajuProizvodjaca"  RenderTransformOrigin="0.58,0.015" Margin="0,150,191.333,515.667">
+            <iconPacks:PackIconMaterial Kind="FileFind"    Height="50" Width="50" RenderTransformOrigin="1.667,0.707" ></iconPacks:PackIconMaterial>
+        </xctk:IconButton>
+        <Label Height="50" Content="Ukupna prodaja svih lekova od " FontSize="22" Margin="0,228,769.333,442.667"/>
+        <xctk:WatermarkTextBox x:Name="izabranLekar" FontSize="22" Watermark="Lekar" Margin="24,263,891.333,401.667" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+        <xctk:IconButton Height="55" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="PrikaziUkupnuProdajuLekara"  RenderTransformOrigin="0.58,0.015" Margin="0,264,838.333,401.667">
+            <iconPacks:PackIconMaterial Kind="FileFind"    Height="50" Width="50" ></iconPacks:PackIconMaterial>
+        </xctk:IconButton>
+
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="10,20,0,0" Text="ADMIN" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" FontSize="36" FontFamily="Arial"/>
+        <Button  Content="Registruj korisnike" HorizontalAlignment="Left" Margin="7,629,0,0" VerticalAlignment="Top" Width="300" Height="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="Registracija1"/>
+        <xctk:IconButton Height="55" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="PrikaziSveRecepte" Margin="0,62,838.333,603.667" >
+            <iconPacks:PackIconMaterial Kind="FileFind"    Height="50" Width="50" RenderTransformOrigin="-0.533,0.44" ></iconPacks:PackIconMaterial>
+
+        </xctk:IconButton>
+        <xctk:IconButton Height="55" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="PrikaziSveLekove"  RenderTransformOrigin="0.58,0.015" Margin="0,114,841.333,551.667">
+            <iconPacks:PackIconMaterial Kind="FileFind"    Height="50" Width="50" RenderTransformOrigin="0.707,0.435" ></iconPacks:PackIconMaterial>
+        </xctk:IconButton>
+        <Label Width="250" Content="Prikaz svih korisnika" FontSize="22" Margin="7,172,836.333,497.667"/>
+        <ComboBox x:Name="pretragaLeka" Width="162" Margin="2,395,0,268" SelectionChanged="ComboBox_SelectionChanged" RenderTransformOrigin="0.541,-0.698" HorizontalAlignment="Left">
+            <ComboBoxItem Content="Sifra"/>
+            <ComboBoxItem Content="Ime"></ComboBoxItem>
+            <ComboBoxItem Content="Proizvodjac"/>
+            <ComboBoxItem Content="OpsegCene"/>
+        </ComboBox>
+        <ComboBox x:Name="pretragaRecepta" Width="160" Margin="0,503,0,161" SelectionChanged="ComboBox_SelectionChanged" RenderTransformOrigin="0.541,-0.698" HorizontalAlignment="Left">
+            <ComboBoxItem Content="Sifra"/>
+            <ComboBoxItem Content="Lekar"/>
+            <ComboBoxItem Content="Jbmg"/>
+            <ComboBoxItem Content="Lek">
+
+            </ComboBoxItem>
+        </ComboBox>
+        <Label Height="50" Width="250" Content="Pretraga lekova" FontSize="22" Margin="4,340,838,329"/>
+
+
+
+
+
+        <xctk:IconButton Click="PrikaziSveKorisnike" Height="56" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.58,0.015" Margin="0,172,842.333,492.667">
+            <iconPacks:PackIconMaterial Kind="Account"    Height="50" Width="50" ></iconPacks:PackIconMaterial>
+
+
+        </xctk:IconButton>
+        <Label Height="50" Width="250" Content="Pretraga repepta" FontSize="22" Margin="0,467,842,202"/>
+        <xctk:WatermarkTextBox x:Name="traziRecept" FontSize="22" Watermark="Pretraga" Margin="171,502,745,161" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+
+
+        <xctk:IconButton Click="PretraziLekove" Height="56" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Margin="27,386,693,269" RenderTransformOrigin="0.58,0.015">
+            <iconPacks:PackIconMaterial Kind="FileFindOutline"    Height="50" Width="50" ></iconPacks:PackIconMaterial>
+
+
+        </xctk:IconButton>
+
+        <xctk:IconButton Click="PretraziRecepte" Height="56" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,499,690,164" RenderTransformOrigin="0.58,0.015">
+            <iconPacks:PackIconMaterial Kind="FileFindOutline"    Height="50" Width="50" ></iconPacks:PackIconMaterial>
+
+        </xctk:IconButton>
+
+        <xctk:WatermarkTextBox x:Name="pronadjiLek" FontSize="22" Watermark="Pretraga" Margin="406,16,510,647" VerticalContentAlignment="Center" Height="56" Background="#FF83F0AB" />
+        <Button  Content="Izmeni Lek" HorizontalAlignment="Left" Margin="587,10,0,0" VerticalAlignment="Top" Width="88" Height="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="izmenilek" RenderTransformOrigin="0.121,0.538"/>
+        <Button  Content="Obrisi Lek" HorizontalAlignment="Left" Margin="705,10,0,629" Width="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="obrisilek" RenderTransformOrigin="0.121,0.538"/>
+        <Button  Content="DodajLek" HorizontalAlignment="Left" Margin="817,10,0,0" VerticalAlignment="Top" Width="80" Height="80" Background="#FF10549D" Foreground="#FFFDFDFD" FontSize="18" Click="dodajlek" RenderTransformOrigin="0.121,0.538"/>
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
